@@ -26,7 +26,7 @@ const config = {
       return filepath.endsWith("index.js");
     },
     files: (filepath) => {
-      return !filepath.endsWith(".test.ts");
+      return filepath.endsWith(".test.ts") || filepath.includes('test-utils') ? false : true;
     },
   },
 };
