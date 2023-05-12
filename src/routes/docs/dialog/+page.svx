@@ -1,10 +1,16 @@
-# Dialog
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import DialogSource from '../examples/dialog.svelte?raw'
+  import Dialog from '../examples/dialog.svelte'
+  import Preview from "../_CodePreview.svelte";
 </script>
 
-<Preview url="examples/dialog" code="" class="h-[410px] bg-indigo-300"/>
+# Dialog
+
+<Preview class="h-[410px] w-full bg-indigo-300" source={DialogSource}>
+  <div class="flex items-center justify-center">
+    <Dialog/>
+  </div>
+</Preview>
 
 ## Basic example
 

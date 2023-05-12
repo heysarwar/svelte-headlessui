@@ -25,7 +25,7 @@
   ];
 </script>
 
-<nav title="Pages" class="flex flex-col px-6">
+<nav title="Pages" class="flex flex-col px-6 xl:pl-0">
   {#each pages as p (p.url)}
     <a
       href={p.url}

@@ -281,4 +281,4 @@ Unfortunately, it some cases this can cause some visual differences. For example
 
 Modal components that have `{/* This element is to trick the browser into centering the modal contents. */}` above a `Transition` might require moving that element inside the `Transition`.
 
-If you run into problems related to this that aren't mentioned here, please [report them on GitHub](https://github.com/rgossiaux/svelte-headlessui/issues) so that we can improve the documentation.
+If you run into problems related to this that aren't mentioned here, please [report them on GitHub](https://github.com/NoelOConnell/svelte-headlessui/issues) so that we can improve the documentation.

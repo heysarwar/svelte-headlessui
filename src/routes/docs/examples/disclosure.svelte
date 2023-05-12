@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Disclosure, DisclosureButton, DisclosurePanel } from "$lib";
-  import { ChevronUpIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { ChevronUp, Icon } from "svelte-hero-icons";
 </script>
 
 <div class="w-full px-4 pt-16">
@@ -10,7 +10,7 @@
         class="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
       >
         <span>What is your refund policy?</span>
-        <ChevronUpIcon
+        <Icon src={ChevronUp} solid
           class={`${
             open ? "transform rotate-180" : ""
           } w-5 h-5 text-purple-500`}
@@ -26,7 +26,7 @@
         class="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
       >
         <span>Do you offer technical support?</span>
-        <ChevronUpIcon
+        <Icon src={ChevronUp} solid
           class={`${
             open ? "transform rotate-180" : ""
           } w-5 h-5 text-purple-500`}

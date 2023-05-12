@@ -1,10 +1,16 @@
-# Menu
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import MenuSource from '../examples/menu.svelte?raw'
+  import Menu from '../examples/menu.svelte'
+  import Preview from "../_CodePreview.svelte";
 </script>
 
-<Preview url="examples/menu" code="" class="h-[410px] bg-violet-300"/>
+# Menu
+
+<Preview class="h-[410px] w-full bg-violet-300" source={MenuSource}>
+  <div class="flex items-center justify-center">
+    <Menu/>
+  </div>
+</Preview>
 
 ## Basic example
 

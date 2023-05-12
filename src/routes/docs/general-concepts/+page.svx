@@ -422,4 +422,4 @@ You're free to change the element that any component renders as using the `as` p
 </Menu>
 ```
 
-Due to technical limitations in Svelte, each one of these elements must be handled individually by the library. Most elements should be supported, but some uncommon ones might not be. If you find yourself wanting to use an element that is _not_ currently supported, please [file a GitHub issue](https://github.com/rgossiaux/svelte-headlessui/issues).
+Due to technical limitations in Svelte, each one of these elements must be handled individually by the library. Most elements should be supported, but some uncommon ones might not be. If you find yourself wanting to use an element that is _not_ currently supported, please [file a GitHub issue](https://github.com/NoelOConnell/svelte-headlessui/issues).

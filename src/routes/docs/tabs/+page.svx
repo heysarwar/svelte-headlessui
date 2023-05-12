@@ -1,10 +1,25 @@
-# Tabs
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import TabsSource from '../examples/tabs.svelte?raw'
+  import Tabs from '../examples/tabs.svelte'
+  import Preview from "../_CodePreview.svelte";  
+  import PropsTable from '../_PropsTable.svelte'
+  import SlotPropsTable from '../_SlotPropsTable.svelte'
+  import EventsTable from '../_EventsTable.svelte'
+
+  import tabGroupDocs from '../../../lib/components/tabs/TabGroup.svelte?raw&sveld'
+  import tabListDocs from '../../../lib/components/tabs/TabList.svelte?raw&sveld'
+  import tabDocs from '../../../lib/components/tabs/Tab.svelte?raw&sveld'
+  import tabPanelsDocs from '../../../lib/components/tabs/TabPanels.svelte?raw&sveld'
+  import tabPanelDocs from '../../../lib/components/tabs/TabPanel.svelte?raw&sveld'
 </script>
 
-<Preview url="examples/tabs" code="" class="h-[340px] bg-blue-300"/>
+# Tabs
+
+<Preview class="h-[340px] w-full bg-blue-300" source={TabsSource}>
+  <div class="flex items-center justify-center">
+    <Tabs/>
+  </div>
+</Preview>
 
 ## Basic example
 
@@ -270,68 +285,41 @@ For a full reference on all accessibility features implemented in `Tab`, see <a 
 
 The main tab group component.
 
-| Prop           | Default | Type      | Description                                                                                                                                                                                                              |
-| -------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `as`           | `div`   | `string`  | The element the `TabGroup` should render as                                                                                                                                                                              |
-| `defaultIndex` | `0`     | `number`  | The index of the default selected tab                                                                                                                                                                                    |
-| `vertical`     | `false` | `boolean` | Whether the orientation of the `TabList` is vertical instead of horizontal                                                                                                                                               |
-| `manual`       | `false` | `boolean` | Whether, in keyboard navigation, the `Enter` or `Space` key is necessary to change tabs. By default, the arrow keys will change tabs automatically without hitting `Enter`/`Space`. This has no impact on mouse behavior |
-
-| Slot prop       | Type     | Description                  |
-| --------------- | -------- | ---------------------------- |
-| `selectedIndex` | `number` | The currently selected index |
+<PropsTable props={tabGroupDocs.props} />
+<SlotPropsTable props={tabGroupDocs.slots} />
 
 This component also dispatches a custom event, which is listened to using the Svelte `on:` directive:
 
-| Event name | Type of event `.detail` | Description                             |
-| ---------- | ----------------------- | --------------------------------------- |
-| `change`   | `number`                | Emitted whenever the active tab changes |
+<EventsTable events={tabGroupDocs.events} />
 
 ### TabList
 
 The container for `Tab` components. The order of the `Tab` components it contains must correspond to the order of the `TabPanels`.
 
-| Prop | Default | Type     | Description                                |
-| ---- | ------- | -------- | ------------------------------------------ |
-| `as` | `div`   | `string` | The element the `TabList` should render as |
+<PropsTable props={tabListDocs.props} />
 
-| Slot prop       | Type     | Description                  |
-| --------------- | -------- | ---------------------------- |
-| `selectedIndex` | `number` | The currently selected index |
+<SlotPropsTable props={tabListDocs.slots} />
 
 ### Tab
 
 This component wraps the selector for an individual tab. All `Tab`s will be rendered at once.
 
-| Prop       | Default  | Type      | Description                             |
-| ---------- | -------- | --------- | --------------------------------------- |
-| `as`       | `button` | `string`  | The element the `Tab` should render as  |
-| `disabled` | `false`  | `boolean` | Whether the `Tab` is currently disabled |
+<PropsTable props={tabDocs.props} />
 
-| Slot prop  | Type      | Description                             |
-| ---------- | --------- | --------------------------------------- |
-| `selected` | `boolean` | Whether the `Tab` is currently selected |
+<SlotPropsTable props={tabDocs.slots} />
 
 ### TabPanels
 
 The container for `TabPanel` components. The order of the `TabPanel` components it contains must correspond to the order of the `TabList`.
 
-| Prop | Default | Type     | Description                                  |
-| ---- | ------- | -------- | -------------------------------------------- |
-| `as` | `div`   | `string` | The element the `TabPanels` should render as |
+<PropsTable props={tabPanelsDocs.props} />
 
-| Slot prop       | Type     | Description                  |
-| --------------- | -------- | ---------------------------- |
-| `selectedIndex` | `number` | The currently selected index |
+<SlotPropsTable props={tabPanelsDocs.slots} />
 
 ### TabPanel
 
 This component wraps the contents of an individual tab. Only one `TabPanel` will be visible at once.
 
-| Prop | Default | Type     | Description                                 |
-| ---- | ------- | -------- | ------------------------------------------- |
-| `as` | `div`   | `string` | The element the `TabPanel` should render as |
+<PropsTable props={tabPanelDocs.props} />
 
-| Slot prop  | Type      | Description                                         |
-| ---------- | --------- | --------------------------------------------------- |
-| `selected` | `boolean` | Whether or not the `TabPanel` is currently selected |
+<SlotPropsTable props={tabPanelDocs.slots} />

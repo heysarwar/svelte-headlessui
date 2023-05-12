@@ -1,10 +1,16 @@
-# Popover
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import PopoverSource from '../examples/popover.svelte?raw'
+  import Popover from '../examples/popover.svelte'
+  import Preview from "../_CodePreview.svelte";
 </script>
 
-<Preview url="examples/popover" code="" class="h-[520px] bg-orange-500"/>
+# Popover
+
+<Preview class="h-[520px] w-full bg-orange-300" source={PopoverSource}>
+  <div class="flex items-center justify-center">
+    <Popover/>
+  </div>
+</Preview>
 
 ## Basic example
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "$lib";
-  import { ChevronDownIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { ChevronDown, Icon } from "svelte-hero-icons";
 </script>
 
 <div class="w-56 text-right fixed top-16">
@@ -10,7 +10,7 @@
         class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
       >
         Options
-        <ChevronDownIcon
+        <Icon src={ChevronDown} solid
           class="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100"
           aria-hidden="true"
         />

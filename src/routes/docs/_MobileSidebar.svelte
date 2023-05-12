@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Dialog, DialogOverlay, Transition, TransitionChild } from "$lib";
-  import { XIcon } from "@rgossiaux/svelte-heroicons/outline";
+  import { Icon, XMark } from "svelte-hero-icons";
   import Sidebar from "./_Sidebar.svelte";
   export let sidebarOpen = false;
 </script>
@@ -46,7 +46,7 @@
               on:click={() => (sidebarOpen = false)}
             >
               <span class="sr-only">Close sidebar</span>
-              <XIcon class="h-6 w-6 text-white" aria-hidden="true" />
+              <Icon src={XMark} class="h-6 w-6 text-white" aria-hidden="true" />
             </button>
           </div>
         </TransitionChild>

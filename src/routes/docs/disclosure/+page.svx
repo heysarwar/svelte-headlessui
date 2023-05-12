@@ -1,10 +1,16 @@
-# Disclosure
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import DisclosureSource from '../examples/disclosure.svelte?raw'
+  import Disclosure from '../examples/disclosure.svelte'
+  import Preview from "../_CodePreview.svelte";
 </script>
 
-<Preview url="examples/disclosure" code="" class="h-[370px] bg-fuchsia-300"/>
+# Disclosure
+
+<Preview class="h-[410px] w-full bg-fuchsia-300" source={DisclosureSource}>
+  <div class="flex items-center justify-center">
+    <Disclosure/>
+  </div>
+</Preview>
 
 ## Basic example
 
@@ -44,15 +50,15 @@ Clicking the `DisclosureButton` will automatically open/close the `DisclosurePan
     Disclosure,
     DisclosureButton,
     DisclosurePanel,
-  } from "@rgossiaux/svelte-headlessui";
-  import { ChevronRightIcon } from "@rgossiaux/svelte-heroicons/solid";
+  } from "@rgossiaux/svelte-headlessui";  
+  import { ChevronRight, Icon } from "svelte-hero-icons";
 </script>
 
 <Disclosure let:open>
   <DisclosureButton>
     <span>Is team pricing available?</span>
     <!-- Use the `open` slot prop to rotate the icon when the panel is open -->
-    <ChevronRightIcon style={open ? "transform: rotate(90deg);" : ""} />
+    <Icon src={ChevronRightIcon} style={open ? "transform: rotate(90deg);" : ""} />
   </DisclosureButton>
 
   <DisclosurePanel>

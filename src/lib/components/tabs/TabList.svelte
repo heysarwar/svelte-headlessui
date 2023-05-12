@@ -6,18 +6,21 @@
 </script>
 
 <script lang="ts">
-  import { useTabsContext } from "./TabGroup.svelte";
-  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
-  import { get_current_component } from "svelte/internal";
-  import type { SupportedAs } from "$lib/internal/elements";
   import type { HTMLActionArray } from "$lib/hooks/use-actions";
-  import Render from "$lib/utils/Render.svelte";
+  import type { SupportedAs } from "$lib/internal/elements";
+  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
   import type { TPassThroughProps } from "$lib/types";
+  import Render from "$lib/utils/Render.svelte";
+  import { get_current_component } from "svelte/internal";
+  import { useTabsContext } from "./TabGroup.svelte";
 
   /***** Props *****/
   type TAsProp = $$Generic<SupportedAs>;
   type $$Props = TTabListProps<typeof slotProps, TAsProp>;
 
+  /**
+   * The element the <code>TabList</code> should render as
+   */
   export let as: SupportedAs = "div";
   export let use: HTMLActionArray = [];
 
@@ -33,6 +36,9 @@
     "aria-orientation": $api.orientation,
   };
 
+  /**
+   * @slot {{ selectedIndex: number | null; }} __default__ The currently selected index
+   */
   $: slotProps = { selectedIndex: $api.selectedIndex };
 </script>
 

@@ -6,21 +6,24 @@
 </script>
 
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { useTabsContext } from "./TabGroup.svelte";
-  import { useId } from "$lib/hooks/use-id";
-  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
-  import { get_current_component } from "svelte/internal";
-  import type { SupportedAs } from "$lib/internal/elements";
   import type { HTMLActionArray } from "$lib/hooks/use-actions";
-  import Render from "$lib/utils/Render.svelte";
-  import { writable } from "svelte/store";
+  import { useId } from "$lib/hooks/use-id";
+  import type { SupportedAs } from "$lib/internal/elements";
+  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
   import { Features, type TPassThroughProps } from "$lib/types";
+  import Render from "$lib/utils/Render.svelte";
+  import { onMount } from "svelte";
+  import { get_current_component } from "svelte/internal";
+  import { writable } from "svelte/store";
+  import { useTabsContext } from "./TabGroup.svelte";
 
   /***** Props *****/
   type TAsProp = $$Generic<SupportedAs>;
   type $$Props = TTabPanelProps<typeof slotProps, TAsProp>;
 
+  /**
+   * The element the <code>TabPanel</code> should render as
+   */
   export let as: SupportedAs = "div";
   export let use: HTMLActionArray = [];
 
@@ -53,6 +56,9 @@
     Object.assign(propsWeControl, { ["data-headlessui-index"]: myIndex });
   }
 
+  /**
+   * @slot {{ selected: boolean }} __default__  Whether or not the <code>TabPanel</code> is currently selected
+   */
   $: slotProps = { selected };
 </script>
 

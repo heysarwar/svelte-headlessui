@@ -1,10 +1,16 @@
-# Switch
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import SwitchSource from '../examples/switch.svelte?raw'
+  import Switch from '../examples/switch.svelte'
+  import Preview from "../_CodePreview.svelte";
 </script>
 
-<Preview url="examples/switch" code="" class="h-[180px] bg-teal-300"/>
+# Switch
+
+<Preview class="h-[180px] w-full bg-teal-300" source={SwitchSource}>
+  <div class="flex items-center justify-center">
+    <Switch/>
+  </div>
+</Preview>
 
 ## Basic example
 

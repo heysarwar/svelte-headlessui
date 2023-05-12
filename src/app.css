@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  scrollbar-gutter: stable;
+  overflow-y: auto;
+}
+
 /* This was removed from preflight, but turning it back on for better testing */
 button:focus {
   outline: 1px dotted;
@@ -13,6 +18,7 @@ button:focus {
   display: none;
 }
 
+/* Style lines highlighted in code blocks */
 .line.highlight {
-  @apply bg-white bg-opacity-20
+  @apply border-l-4 border-sky-500 bg-sky-500 bg-opacity-20
 }

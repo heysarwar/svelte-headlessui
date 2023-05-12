@@ -6,9 +6,11 @@
 </script>
 
 <script lang="ts">
+  import Code from "./_Code.svelte";
+
   let _class = "";
   export { _class as class };
-  export let source: string | undefined;
+  export let source: string;
 
   let containerEl: HTMLDivElement;
   let iframeEl: HTMLIFrameElement;
@@ -34,7 +36,7 @@
   $: sourceHeight = containerEl?.offsetHeight;
 </script>
 
-<div bind:this={containerEl} class="relative">
+<div bind:this={containerEl} class="relative rounded-xl overflow-hidden">
   <div class="absolute inset-x-0 top-0 z-10 m-[2px] md:left-auto">
     <div
       class=" flex items-stretch justify-end rounded-t-[10px] px-2 py-1 md:m-1 md:rounded-lg"
@@ -70,7 +72,7 @@
     >
       <slot />
     </iframe>
-  {:else if mode == PreviewModes.Code}
-    <pre style="height:{sourceHeight}px">{source}</pre>
+  {:else if mode == PreviewModes.Code}    
+    <Code code={source} />
   {/if}
 </div>

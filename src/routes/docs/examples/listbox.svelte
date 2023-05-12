@@ -6,7 +6,7 @@
     ListboxOptions,
     Transition,
   } from "$lib";
-  import { CheckIcon, SelectorIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { Check, ChevronUpDown, Icon } from "svelte-hero-icons";
 
   const people = [
     { name: "Wade Cooper" },
@@ -30,7 +30,7 @@
         <span
           class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
         >
-          <SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+          <Icon src={ChevronUpDown} solid class="w-5 h-5 text-gray-400" aria-hidden="true" />
         </span>
       </ListboxButton>
       <Transition
@@ -61,7 +61,7 @@
                 <span
                   class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
                 >
-                  <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                  <Icon src={Check} solid class="w-5 h-5" aria-hidden="true" />
                 </span>
               {/if}
             </ListboxOption>

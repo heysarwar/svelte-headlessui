@@ -1,6 +1,6 @@
 <script>
   import { page } from "$app/stores";
-  import { MenuAlt2Icon } from "@rgossiaux/svelte-heroicons/outline";
+  import { Bars3BottomLeft, Icon } from "svelte-hero-icons";
 
   import "../app.css";
   import MobileSidebar from "./docs/_MobileSidebar.svelte";
@@ -8,7 +8,6 @@
   let sidebarOpen = false;
 
   $: isExample = $page.routeId == "docs/examples";
-  
 </script>
 
 {#if isExample}
@@ -18,7 +17,7 @@
   <div
     class="sticky top-0 px-6 text-xl text-stone-500 w-full backdrop-blur border-b z-20"
   >
-    <div class="py-4 pr-4 flex justify-between items-center">
+    <div class="mx-auto max-w-8xl xl:px-8 py-4 flex justify-between items-center m-auto">
       <div class="flex items-center space-x-4 md:space-x-0">
         <button
           type="button"
@@ -26,14 +25,14 @@
           on:click={() => (sidebarOpen = true)}
         >
           <span class="sr-only">Open sidebar</span>
-          <MenuAlt2Icon class="h-6 w-6" aria-hidden="true" />
+          <Icon src={Bars3BottomLeft} class="h-6 w-6" aria-hidden="true" />
         </button>
         <a href="/docs">
-          <span class="text-amber-600">Svelte</span> Headless UI
+          <span class="text-[#ff3e00]">Svelte</span> Headless UI
         </a>
       </div>
       <a
-        href="https://github.com/rgossiaux/svelte-headlessui"
+        href="https://github.com/NoelOConnell/svelte-headlessui"
         class="hover:text-black"
       >
         <svg viewBox="0 0 16 16" fill="currentColor" class="w-5 h-5">

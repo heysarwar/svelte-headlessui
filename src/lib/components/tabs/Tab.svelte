@@ -9,26 +9,32 @@
 </script>
 
 <script lang="ts">
-  import { onMount } from "svelte";
+  import type { HTMLActionArray } from "$lib/hooks/use-actions";
+  import { useId } from "$lib/hooks/use-id";
+  import type { SupportedAs } from "$lib/internal/elements";
+  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
+  import type { TPassThroughProps } from "$lib/types";
+  import Render from "$lib/utils/Render.svelte";
   import { Focus, focusIn } from "$lib/utils/focus-management";
   import { Keys } from "$lib/utils/keyboard";
   import { match } from "$lib/utils/match";
-  import { useTabsContext } from "./TabGroup.svelte";
-  import { useId } from "$lib/hooks/use-id";
-  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
-  import { get_current_component } from "svelte/internal";
-  import type { SupportedAs } from "$lib/internal/elements";
-  import type { HTMLActionArray } from "$lib/hooks/use-actions";
-  import Render from "$lib/utils/Render.svelte";
   import { resolveButtonType } from "$lib/utils/resolve-button-type";
-  import type { TPassThroughProps } from "$lib/types";
+  import { onMount } from "svelte";
+  import { get_current_component } from "svelte/internal";
+  import { useTabsContext } from "./TabGroup.svelte";
 
   /***** Props *****/
   type TAsProp = $$Generic<SupportedAs>;
   type $$Props = TTabProps<typeof slotProps, TAsProp>;
 
+  /**
+   * The element the <code>Tab</code> should render as
+   */
   export let as: SupportedAs = "button";
   export let use: HTMLActionArray = [];
+  /**
+   * Whether the <code>Tab</code> is currently disabled
+   */
   export let disabled = false;
 
   /***** Events *****/
@@ -118,6 +124,9 @@
     Object.assign(propsWeControl, { ["data-headlessui-index"]: myIndex });
   }
 
+  /**
+   * @slot {{ selected: boolean }} __default__ Whether the <code>Tab</code> is currently selected
+   */
   $: slotProps = { selected };
 </script>
 

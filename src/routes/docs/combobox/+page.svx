@@ -122,7 +122,6 @@ For example, the `ComboboxOption` component exposes an `active` state, which tel
     ComboboxOptions,
     ComboboxOption,
   } from "@rgossiaux/svelte-headlessui";
-  import { CheckIcon } from "@rgossiaux/svelte-heroicons/solid";
 
   const people = [
     { id: 1, name: 'Durward Reynolds', unavailable: false },

@@ -12,14 +12,15 @@
 <script lang="ts">
   export let items: TocItem[] = [];
   export let activeId: string | undefined;
+  export let nested: boolean = false
 </script>
 
-<ol class="pl-4">
+<ol class:pl-4={nested}>
   {#each items as item (item.url)}
     <li>
       <a href={item.url} class:active={item.id === activeId}>{item.title}</a>
       {#if item.items}
-        <svelte:self items={item.items} {activeId} />
+        <svelte:self items={item.items} {activeId} nested={true} />
       {/if}
     </li>
   {/each}

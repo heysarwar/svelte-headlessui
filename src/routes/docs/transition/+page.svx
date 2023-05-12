@@ -1,10 +1,16 @@
-# Transition
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import TransitionSource from '../examples/transition.svelte?raw'
+  import Transition from '../examples/transition.svelte'
+  import Preview from "../_CodePreview.svelte";
 </script>
 
-<Preview url="examples/transition" code="" class="h-[340px] bg-rose-300"/>
+# Transition
+
+<Preview class="h-[340px] w-full bg-rose-300" source={TransitionSource}>
+  <div class="flex items-center justify-center">
+    <Transition/>
+  </div>
+</Preview>
 
 ## About this component
 

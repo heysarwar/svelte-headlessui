@@ -1,10 +1,16 @@
-# Radio Group
-
 <script>
-  import Preview from "../_Preview.svelte";
+  import RadioGroupSource from '../examples/radio-group.svelte?raw'
+  import RadioGroup from '../examples/radio-group.svelte'
+  import Preview from "../_CodePreview.svelte";
 </script>
 
-<Preview url="examples/radio-group" code="" class="h-[380px] bg-cyan-300"/>
+# Radio Group
+
+<Preview class="h-[380px] w-full bg-cyan-300" source={RadioGroupSource}>
+  <div class="flex items-center justify-center">
+    <RadioGroup/>
+  </div>
+</Preview>
 
 ## Basic example
 

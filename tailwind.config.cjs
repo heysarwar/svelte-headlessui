@@ -1,8 +1,15 @@
 const config = {
-  content: ["./src/**/*.{html,js,svelte,ts,svx}"],
+  content: [
+    "./src/**/*.{html,js,svelte,ts,svx}",
+    "./node_modules/svhighlight/**/*.svelte"
+  ],
 
   theme: {
-    extend: {},
+    extend: {
+      maxWidth:{
+        '8xl': '90rem'
+      }
+    },
   },
 
   plugins: [

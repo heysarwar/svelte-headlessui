@@ -62,29 +62,45 @@
     setContext,
   } from "svelte";
 
+  import type { HTMLActionArray } from "$lib/hooks/use-actions";
+  import type { SupportedAs } from "$lib/internal/elements";
+  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
+  import type { TPassThroughProps } from "$lib/types";
+  import Render from "$lib/utils/Render.svelte";
+  import { get_current_component } from "svelte/internal";
   import type { Readable, Writable } from "svelte/store";
   import { writable } from "svelte/store";
-  import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder";
-  import { get_current_component } from "svelte/internal";
-  import type { SupportedAs } from "$lib/internal/elements";
-  import type { HTMLActionArray } from "$lib/hooks/use-actions";
-  import Render from "$lib/utils/Render.svelte";
-  import type { TPassThroughProps } from "$lib/types";
 
   /***** Props *****/
   type TAsProp = $$Generic<SupportedAs>;
   type $$Props = TTabGroupProps<typeof slotProps, TAsProp>;
 
+  /**
+   * The element the <code>TabGroup</code> should render
+   */
   export let as: SupportedAs = "div";
   export let use: HTMLActionArray = [];
+  /**
+   * The index of the default selected
+   */
   export let defaultIndex = 0;
+  /**
+   * Whether the orientation of the <code>TabList</code> is vertical instead of horizontal
+   */
   export let vertical = false;
+  /**
+   * Whether, in keyboard navigation, the <code>Enter</code> or <code>Space</code> key is necessary to change tabs. By default, the arrow keys will change tabs automatically without hitting <code>Enter</code>/<code>Space</code>. This has no impact on mouse behavior
+   */
   export let manual = false;
 
   /***** Events *****/
   const forwardEvents = forwardEventsBuilder(get_current_component(), [
     "change",
   ]);
+
+  /**
+   * @event {number} change Emitted whenever the active tab changes
+   */
   const dispatch = createEventDispatcher();
 
   /***** Component *****/
@@ -192,6 +208,9 @@
     }
   });
 
+  /**
+   * @slot {{ selectedIndex: number | null; }} __default__ The currently selected index
+   */
   $: slotProps = { selectedIndex };
 </script>
 

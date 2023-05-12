@@ -5,7 +5,8 @@
     ComboboxInput, ComboboxOption, ComboboxOptions, Transition
   } from "$lib";
 
-  import { CheckIcon, SelectorIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { Check, ChevronUpDown, Icon } from "svelte-hero-icons";
+
 
   const people = [
     { id: 1, name: "Wade Cooper" },
@@ -53,7 +54,7 @@
         <ComboboxButton
           class="absolute inset-y-0 right-0 flex items-center pr-2"
         >
-          <SelectorIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+          <Icon src={ChevronUpDown} solid class="h-5 w-5 text-gray-400" aria-hidden="true" />
         </ComboboxButton>
       </div>
       <Transition
@@ -93,7 +94,7 @@
                       active ? "text-white" : "text-teal-600"
                     }`}
                   >
-                    <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                    <Icon src={Check} solid class="h-5 w-5" aria-hidden="true" />
                   </span>
                 {/if}
               </li>
